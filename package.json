@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "swiper": "^10.0.0",
     "@tailwindcss/vite": "^4.1.17",
     "aos": "^2.3.4",
     "astro": "^5.15.8",
