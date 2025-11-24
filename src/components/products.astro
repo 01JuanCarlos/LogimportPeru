@@ -1,0 +1,95 @@
+---
+
+---
+
+<div
+    class="w-100 py-5 text-center products-bg"
+    style="gap: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;"
+>
+    <h2>Big Bag de polipropileno</h2>
+    <div class="container row gap-5 justify-content-center">
+        <div class="card" style="width: 18rem;" data-aos="flip-left">
+            <img
+                class="card-img-top"
+                src="./product-1.jpg"
+                alt="Card image cap"
+            />
+            <div class="card-body text-center">
+                <h5 class="card-title">BIG BAG CIELO ABIERTO FONDO PLANO</h5>
+                <a href="#" class="btn btn-product">Cotizar</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;" data-aos="flip-right">
+            <img
+                class="card-img-top"
+                src="./product-2.jpg"
+                alt="Card image cap"
+            />
+            <div class="card-body text-center">
+                <h5 class="card-title">BIG BAG CIELO ABIERTO BUZÓN DESCARGA</h5>
+                <a href="#" class="btn btn-product">Cotizar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .products-bg {
+        background-image: url("./section-background-producs.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; /* aquí sí funciona */
+    }
+
+    .card {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        border: none;
+        overflow: hidden;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-img-top {
+        width: 70%;
+    }
+
+    .card-body {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 10;
+        background: #4d5663;
+        color: white;
+        gap: 10px;
+    }
+    .btn-product {
+        width: 143px;
+        height: 49px;
+        font-size: 16px;
+        font-weight: 500;
+        background: #e01f34 !important;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: 0.3s;
+    }
+
+    .btn-product:hover {
+        background: #c71c2f !important;
+    }
+</style>

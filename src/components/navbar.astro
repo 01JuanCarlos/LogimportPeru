@@ -1,0 +1,187 @@
+---
+import "../styles/global.css";
+import "../styles/all.min.css";
+---
+
+<!-- TOPBAR -->
+<div class="topbar-wrapper">
+    <div class="topbar">
+        <!-- LEFT -->
+        <div class="left">
+            <span><i class="fa-solid fa-phone"></i> (+51) 1234 578 290</span>
+            <span
+                ><i class="fa-solid fa-envelope"></i> soporte10@logimportperusac.com</span
+            >
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right social">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+    </div>
+</div>
+
+<!-- NAVBAR -->
+<div class="container p-0">
+    <nav class="navbar navbar-expand-lg py-3 nav-custom">
+        <div
+            class="d-flex align-items-center w-100"
+            style="    justify-content: space-between;"
+        >
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="/logo.png" alt="Logo" width="200" class="me-3" />
+            </a>
+
+            <!-- Botón responsive -->
+            <button
+                style=" border: none;
+                        background: #F4F6F9;
+                        font-size: 20px;"
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#menuLateral"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu lateral -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="menuLateral">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">Menú</h5>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="offcanvas"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav gap-3">
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" href="#">INICIO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" href="#">NOSOTROS</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" href="#">COTIZAR</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" href="#"
+                                >PRODUCTOS</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Botón Contactar -->
+            <a href="#" class="btn-contact d-none d-lg-flex">
+                <i class="fa-brands fa-whatsapp fa-2x"></i>
+                Contactar
+            </a>
+        </div>
+    </nav>
+</div>
+
+<style>
+    /* -------------------------- */
+    /* TOPBAR */
+    /* -------------------------- */
+
+    .topbar-wrapper {
+        width: 100%;
+        display: contents; /* se mantiene tu comportamiento */
+    }
+
+    .topbar {
+        background-color: #0f2f5a;
+        color: white;
+        padding: 14px 92px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
+        width: 80%;
+    }
+
+    .topbar .left span {
+        margin-right: 20px;
+    }
+
+    .social i {
+        margin-left: 12px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .social i:hover {
+        color: #e01f34;
+    }
+
+    /* -------------------------- */
+    /* NAVBAR */
+    /* -------------------------- */
+
+    .nav-custom .nav-link {
+        color: black;
+        transition: color 0.3s ease;
+    }
+
+    .nav-custom .nav-link:hover {
+        color: #e01f34;
+    }
+
+    /* Botón contactar */
+    .btn-contact {
+        background: #e01f34;
+        color: white;
+        gap: 8px;
+        align-items: center;
+        padding: 10px 30px;
+        border-radius: 3px;
+        text-decoration: none;
+        font-weight: 500;
+        display: flex;
+        transition: 0.3s;
+    }
+
+    .btn-contact:hover {
+        background: #c81b2e;
+        color: white;
+    }
+
+    /* Menu lateral */
+    .offcanvas {
+        background: #192638;
+    }
+
+    .btn-close {
+        filter: invert(1);
+    }
+
+    @media (max-width: 1806px) {
+        .topbar {
+            width: 95%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .topbar-wrapper {
+            display: none;
+        }
+    }
+    @media (max-width: 991px) {
+        .nav-link,
+        .offcanvas-title {
+            color: white !important;
+        }
+        .offcanvas {
+            padding: 20px;
+        }
+    }
+</style>

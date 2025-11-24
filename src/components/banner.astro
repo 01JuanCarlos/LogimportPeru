@@ -1,0 +1,172 @@
+---
+
+---
+
+<style>
+  /* -------------------------------------- */
+  /* CONTENEDOR SLIDER */
+  /* -------------------------------------- */
+  .container-slider-custom {
+    border-radius: 20px;
+    overflow: hidden;
+    max-height: 65vh;
+    padding: 0;
+  }
+
+  /* -------------------------------------- */
+  /* SLIDER GENERAL */
+  /* -------------------------------------- */
+  .heroSwiper {
+    width: 100%;
+    min-height: 500px; /* ajusta este valor */
+  }
+
+  /* -------------------------------------- */
+  /* SLIDE 1 - fondo + contenido */
+  /* -------------------------------------- */
+  .slide-1 {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        to right,
+        #0f2f5ae8,
+        rgba(255, 255, 255, 0)
+      ),
+      url(./banner.png);
+    background-size: cover;
+    background-position: 58% 42%;
+    background-repeat: no-repeat;
+  }
+
+  /* -------------------------------------- */
+  /* CONTENIDO DEL SLIDE */
+  /* -------------------------------------- */
+  .slide-content {
+    flex-direction: column;
+    padding-inline: 3.5rem;
+    gap: 22px;
+  }
+
+  /* Título */
+  .slide-title {
+    font-weight: 600;
+    font-size: 2.8rem;
+    margin: 0;
+    color: white;
+  }
+
+  /* Descripción */
+  .slide-desc {
+    font-size: 16px;
+    margin-top: 10px;
+    color: white;
+    line-height: 1.5;
+  }
+
+  /* -------------------------------------- */
+  /* BOTÓN */
+  /* -------------------------------------- */
+  .btn-slide {
+    width: 143px;
+    height: 49px;
+    font-size: 16px;
+    font-weight: 500;
+    background: #e01f34;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: 0.3s;
+  }
+
+  .btn-slide:hover {
+    background: #c71c2f;
+  }
+
+  /* -------------------------------------- */
+  /* DEFAULT PARA LOS OTROS SLIDES */
+  /* -------------------------------------- */
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    background: #333;
+  }
+
+  @media (max-width: 576px) {
+    .slide-content {
+      padding-inline: 1.5rem;
+    }
+    .slide-desc {
+      font-size: 14px;
+    }
+    .slide-title {
+      font-weight: 600;
+      font-size: 2.5rem;
+    }
+    .container-slider-custom {
+      border-radius: 0px;
+    }
+  }
+</style>
+
+<div
+  class="swiper heroSwiper container container-slider-custom" data-aos="zoom-in"
+>
+  <div class="swiper-wrapper">
+    <!-- SLIDE 1 -->
+    <div class="swiper-slide">
+      <div class="slide-1 d-flex align-items-center">
+        <div class="slide-content col-lg-7 col-md-9 col-sm-11 d-flex">
+          <div>
+            <h1 class="slide-title">
+              Soluciones de Empaque para Carga semi Granel
+            </h1>
+
+            <p class="slide-desc">
+              Big Bag Perú SAC. Somos una empresa peruana que brinda soluciones
+              de empaque para cargas semi-granel, para su uso en la industria
+              minera, agrícola, plástica, alimenticia, farmacéutica, de la
+              construcción, etc.
+            </p>
+          </div>
+
+          <button class="btn-slide">
+            Cotizar <i class="fa-solid fa-angle-right fa-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
+  </div>
+
+  <!-- Botones -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+
+  <!-- Paginación -->
+  <div class="swiper-pagination"></div>
+</div>
+
+<script>
+  import Swiper from "swiper";
+  import { Navigation, Pagination } from "swiper/modules";
+
+  new Swiper(".heroSwiper", {
+    modules: [Navigation, Pagination],
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+  import initAOS from "../scripts/aosinit";
+  initAOS();
+</script>
