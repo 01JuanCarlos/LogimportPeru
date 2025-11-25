@@ -25,14 +25,32 @@
   /* SLIDE 1 - fondo + contenido */
   /* -------------------------------------- */
   .slide-1 {
-    width: 100%;
-    height: 100%;
     background-image: linear-gradient(
         to right,
         #0f2f5ae8,
         rgba(255, 255, 255, 0)
       ),
       url("/banner.png");
+  }
+  .slide-2 {
+    background-image: linear-gradient(
+        to right,
+        #0f2f5ae8,
+        rgba(255, 255, 255, 0)
+      ),
+      url("/banner-slide-2.jpg");
+  }
+  .slide-3 {
+    background-image: linear-gradient(
+        to right,
+        #0f2f5ae8,
+        rgba(255, 255, 255, 0)
+      ),
+      url("/banner-slide-3.jpg");
+  }
+  .slide {
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: 58% 42%;
     background-repeat: no-repeat;
@@ -126,7 +144,7 @@
   <div class="swiper-wrapper">
     <!-- SLIDE 1 -->
     <div class="swiper-slide">
-      <div class="slide-1 d-flex align-items-center">
+      <div class="slide slide-1 d-flex align-items-center">
         <div class="slide-content col-lg-7 col-md-9 col-sm-11 d-flex">
           <div>
             <h1 class="slide-title">
@@ -148,8 +166,50 @@
       </div>
     </div>
 
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
+    <div class="swiper-slide">
+      <div class="slide slide-2 d-flex align-items-center">
+        <div class="slide-content col-lg-7 col-md-9 col-sm-11 d-flex">
+          <div>
+            <h1 class="slide-title">
+              Soluciones de Empaque para Carga semi Granel
+            </h1>
+
+            <p class="slide-desc">
+              Big Bag Perú SAC. Somos una empresa peruana que brinda soluciones
+              de empaque para cargas semi-granel, para su uso en la industria
+              minera, agrícola, plástica, alimenticia, farmacéutica, de la
+              construcción, etc.
+            </p>
+          </div>
+
+          <button class="btn-slide">
+            Cotizar <i class="fa-solid fa-angle-right fa-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="slide slide-3 d-flex align-items-center">
+        <div class="slide-content col-lg-7 col-md-9 col-sm-11 d-flex">
+          <div>
+            <h1 class="slide-title">
+              Soluciones de Empaque para Carga semi Granel
+            </h1>
+
+            <p class="slide-desc">
+              Big Bag Perú SAC. Somos una empresa peruana que brinda soluciones
+              de empaque para cargas semi-granel, para su uso en la industria
+              minera, agrícola, plástica, alimenticia, farmacéutica, de la
+              construcción, etc.
+            </p>
+          </div>
+
+          <button class="btn-slide">
+            Cotizar <i class="fa-solid fa-angle-right fa-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Botones -->
@@ -166,10 +226,10 @@
 
   new Swiper(".heroSwiper", {
     modules: [Navigation, Pagination, Autoplay],
-    autoplay: {
+   /* autoplay: {
       delay: 3000, // tiempo entre slides (3s)
       disableOnInteraction: false, // sigue automático después de arrastrar
-    },
+    },*/
     pagination: { el: ".swiper-pagination", clickable: true },
     navigation: {
       nextEl: ".swiper-button-next",
