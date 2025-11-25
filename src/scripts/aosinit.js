@@ -4,6 +4,14 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function initAOS() {
+
+  if (window.innerWidth > 768) {
+    AOS.init();
+  } else {
+    AOS.init({
+      disable: true
+    });
+  }
   AOS.init({
     duration: 800,        // duración de la animación en ms
     easing: 'ease-out',   // tipo de aceleración
@@ -12,5 +20,7 @@ export default function initAOS() {
     delay: 0,             // retraso
     mirror: false         // si repite al hacer scroll hacia arriba
   });
+
+
 
 }
