@@ -139,7 +139,7 @@
 
 <div
   class="swiper heroSwiper container container-slider-custom"
-  data-aos="zoom-in"
+  data-aos="zoom-in" id="inicio"
 >
   <div class="swiper-wrapper">
     <!-- SLIDE 1 -->
@@ -226,10 +226,10 @@
 
   new Swiper(".heroSwiper", {
     modules: [Navigation, Pagination, Autoplay],
-   /* autoplay: {
+    autoplay: {
       delay: 3000, // tiempo entre slides (3s)
       disableOnInteraction: false, // sigue automático después de arrastrar
-    },*/
+    },
     pagination: { el: ".swiper-pagination", clickable: true },
     navigation: {
       nextEl: ".swiper-button-next",

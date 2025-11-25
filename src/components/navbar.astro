@@ -1,7 +1,6 @@
 ---
 import "../styles/global.css";
 import "../styles/all.min.css";
-
 ---
 
 <!-- TOPBAR -->
@@ -45,12 +44,12 @@ import "../styles/all.min.css";
                 type="button"
                 data-bs-toggle="offcanvas"
                 data-bs-target="#menuLateral"
-            >
-                <span class="navbar-toggler-icon"></span>
+                ><a href="#menu-abierto">
+                    <span class="navbar-toggler-icon"></span>
+                </a>
             </button>
 
-            <!-- Menu lateral -->
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="menuLateral">
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="menuLateral-1">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title">Menú</h5>
                     <button
@@ -62,17 +61,20 @@ import "../styles/all.min.css";
                 <div class="offcanvas-body">
                     <ul class="navbar-nav gap-3">
                         <li class="nav-item">
-                            <a class="nav-link fw-semibold" href="#">INICIO</a>
+                            <a class="nav-link fw-semibold" href="#inicio"
+                                >INICIO</a
+                            >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-semibold" href="#">NOSOTROS</a
+                            <a class="nav-link fw-semibold" href="#about"
+                                >NOSOTROS</a
                             >
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fw-semibold" href="#">COTIZAR</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-semibold" href="#"
+                            <a class="nav-link fw-semibold" href="#products"
                                 >PRODUCTOS</a
                             >
                         </li>
@@ -80,6 +82,19 @@ import "../styles/all.min.css";
                 </div>
             </div>
 
+
+            <nav id="menu-abierto" class="menuLateral-2">
+                <a href="#" class="boton-cerrar"
+                    ><i class="fa-solid fa-xmark"></i></a
+                >
+
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#products">Productos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
             <!-- Botón Contactar -->
             <a href="#" class="btn-contact d-none d-lg-flex">
                 <i class="fa-brands fa-whatsapp fa-2x"></i>
@@ -184,5 +199,78 @@ import "../styles/all.min.css";
         .offcanvas {
             padding: 20px;
         }
+    }
+
+    .contenido-principal {
+        padding-top: 50px;
+    }
+
+    .boton-abrir,
+    .boton-cerrar {
+        text-decoration: none;
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+
+    .boton-cerrar {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    /* --- ESTILOS DEL MENÚ LATERAL --- */
+
+    .menuLateral-2 {
+        /* Posicionamiento: Fijo a la DERECHA y arriba */
+        position: fixed;
+        top: 0;
+        right: 0; /* ¡Cambiado de 'left' a 'right'! */
+        height: 100%;
+        width: 250px;
+        background-color: #162a40;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra hacia la izquierda */
+        z-index: 100;
+        padding-top: 60px;
+
+        /* TRUCO CLAVE 1: Ocultar el menú por defecto */
+        /* Mueve el menú completamente fuera de la pantalla (a la DERECHA) */
+        /* Se usa 100% positivo para moverlo hacia la derecha */
+        transform: translateX(100%);
+
+        /* Animación: Agrega una transición suave */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* El resto de los estilos internos del menú (ul, li, a) permanecen igual */
+    .menuLateral-2 ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .menuLateral-2 a {
+        display: block;
+        padding: 15px 20px;
+        color: white;
+        text-decoration: none;
+    }
+
+    /* --- LÓGICA DE APERTURA CON :target --- */
+
+    /* TRUCO CLAVE 2: Muestra el menú cuando su ID es el objetivo (:target) */
+    #menu-abierto:target {
+        /* Mueve el menú a su posición original (visible, fuera del 100% de la derecha) */
+        transform: translateX(0);
+    }
+
+    /* El truco del fondo para cerrar al hacer clic fuera también permanece igual */
+    .menuLateral-2:target::before {
+        content: "";
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
     }
 </style>
