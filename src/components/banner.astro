@@ -115,7 +115,11 @@
     color: white;
     background: #333;
   }
-
+  @media (max-width: 991px) {
+    .container-slider-custom {
+      margin-top: 73px;
+    }
+  }
   @media (max-width: 576px) {
     .swiper-button-next,
     .swiper-button-prev {
@@ -139,7 +143,8 @@
 
 <div
   class="swiper heroSwiper container container-slider-custom"
-  data-aos="zoom-in" id="inicio"
+  data-aos="zoom-in"
+  id="inicio"
 >
   <div class="swiper-wrapper">
     <!-- SLIDE 1 -->
