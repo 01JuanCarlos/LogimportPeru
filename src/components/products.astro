@@ -20,7 +20,7 @@
                 alt="Card image cap"
             />
             <div class="card-body text-center">
-                <h5 class="card-title">BIG BAG CIELO ABIERTO FONDO PLANO</h5>
+                <h5 class="card-title title-product">BIG BAG CIELO ABIERTO FONDO PLANO</h5>
                 <a href="#" class="btn btn-product">Cotizar</a>
             </div>
         </div>
@@ -31,7 +31,7 @@
                 alt="Card image cap"
             />
             <div class="card-body text-center">
-                <h5 class="card-title">BIG BAG CIELO ABIERTO BUZÓN DESCARGA</h5>
+                <h5 class="card-title title-product">BIG BAG CIELO ABIERTO BUZÓN DESCARGA</h5>
                 <a href="#" class="btn btn-product">Cotizar</a>
             </div>
         </div>
@@ -56,6 +56,7 @@
         transition:
             transform 0.3s ease,
             box-shadow 0.3s ease;
+        border-radius: 3px;
     }
     .card:hover {
         transform: scale(1.05);
@@ -93,5 +94,14 @@
 
     .btn-product:hover {
         background: #c71c2f !important;
+    }
+
+    @media (max-width: 768px) {
+        .card {
+            width: 13rem !important;
+        }
+        .title-product{
+            font-size: 1rem !important;
+        }
     }
 </style>
