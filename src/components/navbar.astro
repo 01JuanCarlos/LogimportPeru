@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-import "../styles/all.min.css";
 ---
 
 <!-- TOPBAR -->
@@ -31,7 +30,7 @@ import "../styles/all.min.css";
             style="    justify-content: space-between;"
         >
             <!-- Logo -->
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center" href="/#inicio">
                 <img src="/logo.png" alt="Logo" class="me-3" />
             </a>
 
@@ -65,20 +64,22 @@ import "../styles/all.min.css";
                 <div class="offcanvas-body">
                     <ul class="navbar-nav gap-3">
                         <li class="nav-item">
-                            <a class="nav-link fw-semibold" href="#inicio"
+                            <a class="nav-link fw-semibold" href="/#inicio"
                                 >INICIO</a
                             >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-semibold" href="#about"
+                            <a class="nav-link fw-semibold" href="/#about"
                                 >NOSOTROS</a
                             >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-semibold" href="#">COTIZAR</a>
+                            <a class="nav-link fw-semibold" href="/quotations"
+                                >COTIZAR</a
+                            >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-semibold" href="#products"
+                            <a class="nav-link fw-semibold" href="/#products"
                                 >PRODUCTOS</a
                             >
                         </li>
@@ -92,10 +93,11 @@ import "../styles/all.min.css";
                 >
 
                 <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#about">Nosotros</a></li>
-                    <li><a href="#products">Productos</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="/#inicio">Inicio</a></li>
+                    <li><a href="/#about">Nosotros</a></li>
+                    <li><a href="/quotations">COTIZAR</a></li>
+                    <li><a href="/#products">Productos</a></li>
+                    <li><a href="/#">Contacto</a></li>
                 </ul>
             </nav>
             <!-- Botón Contactar -->

@@ -1,0 +1,193 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/navbar.astro";
+import Footer from "../components/footer.astro";
+---
+
+<style>
+    .btn-send {
+        width: 143px;
+        height: 49px;
+        font-size: 16px;
+        font-weight: 500;
+        background: #e01f34;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: 0.3s;
+    }
+    @media (max-width: 991px) {
+        .container-form {
+            margin-top: 92px !important;
+        }
+    }
+</style>
+<Layout>
+    <Navbar />
+    <div class="container container-form">
+        <h1 class="text-center mb-2">Cotización Big Bag</h1>
+        <p class="text-center text-header mb-4">
+            En el siguiente formulario podrá especificar las características del
+            big bag que es de su interés
+        </p>
+
+        <form action="#" method="post">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="empresa" class="form-label">Empresa:</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="empresa"
+                        name="empresa"
+                    />
+                </div>
+                <div class="col-md-6">
+                    <label for="rucdni" class="form-label">RUC/DNI:</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="rucdni"
+                        name="rucdni"
+                    />
+                </div>
+                <div class="col-md-6">
+                    <label for="ciudad" class="form-label">Ciudad:</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="ciudad"
+                        name="ciudad"
+                    />
+                </div>
+                <div class="col-md-6">
+                    <label for="contacto" class="form-label"
+                        >Persona de contacto:</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="contacto"
+                        name="contacto"
+                    />
+                </div>
+                <div class="col-md-6">
+                    <label for="correo" class="form-label">Correo:</label>
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="correo"
+                        name="correo"
+                    />
+                </div>
+                <div class="col-md-6">
+                    <label for="telefono" class="form-label">Teléfono:</label>
+                    <input
+                        type="tel"
+                        class="form-control"
+                        id="telefono"
+                        name="telefono"
+                    />
+                </div>
+            </div>
+
+            <div class="mb-4 mt-3">
+                <label for="comentario" class="form-label">Comentario:</label>
+                <textarea
+                    class="form-control"
+                    id="comentario"
+                    name="comentario"
+                    rows="3"></textarea>
+            </div>
+
+            <hr />
+
+            <h5 class="mb-3">ESPECIFICACIONES TÉCNICAS DEL BIG BAG</h5>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="capacidad" class="form-label"
+                        >Capacidad de carga:</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="capacidad"
+                        name="capacidad"
+                    />
+                </div>
+                <div class="col-md-6">
+                    <label for="material" class="form-label"
+                        >Material a cargar:</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="material"
+                        name="material"
+                    />
+                </div>
+            </div>
+
+            <hr class="mt-4" />
+
+            <h5 class="mb-3">DISEÑO DEL BIG BAG</h5>
+            <div class="row">
+                <div class="col-md-6 design-option">
+                    <img
+                        src="./product-1.jpg"
+                        alt="Big Bag Cielo Abierto - Fondo Plano"
+                        style="max-width: 9rem;padding: 10px;"
+                    />
+                    <div class="form-check d-flex">
+                        <input
+                            class="form-check-input me-2"
+                            type="radio"
+                            name="diseno"
+                            id="diseno1"
+                            value="Cielo Abierto - Fondo Plano"
+                            checked
+                        />
+                        <label class="form-check-label" for="diseno1">
+                            Cielo Abierto - Fondo Plano
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-md-6 design-option">
+                    <img
+                        src="./product-2.jpg"
+                        alt="Big Bag Cielo Abierto - Buzón de Descarga"
+                        style="max-width: 9rem; padding: 10px;"
+                    />
+                    <div class="form-check d-flex">
+                        <input
+                            class="form-check-input me-2"
+                            type="radio"
+                            name="diseno"
+                            id="diseno2"
+                            value="Cielo Abierto - Buzón de Descarga"
+                        />
+                        <label class="form-check-label" for="diseno2">
+                            Cielo Abierto - Buzón de Descarga
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="mt-4 d-flex justify-content-center">
+                <button type="submit" class="btn-send btn-enviar">
+                    Enviar<i class="fa-solid fa-angle-right fa-lg"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+    <br />
+    <br />
+    <Footer />
+</Layout>
