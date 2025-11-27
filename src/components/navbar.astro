@@ -15,16 +15,16 @@ import "../styles/global.css";
 
         <!-- RIGHT -->
         <div class="right social">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-linkedin"></i>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""> <i class="fa-brands fa-linkedin"></i> </a>
         </div>
     </div>
 </div>
 
 <!-- NAVBAR -->
-<div class="container p-0 container-nav">
-    <nav class="navbar navbar-expand-lg py-3 nav-custom">
+<div class="p-0 container-nav" id="main-nav">
+    <nav class="container navbar navbar-expand-lg py-3 nav-custom">
         <div
             class="d-flex align-items-center w-100"
             style="    justify-content: space-between;"
@@ -49,7 +49,7 @@ import "../styles/global.css";
             </button>
 
             <div
-                class="offcanvas offcanvas-end"
+                class="offcanvas offcanvas-end menu menu-1"
                 tabindex="-1"
                 id="menuLateral-1"
             >
@@ -88,10 +88,9 @@ import "../styles/global.css";
             </div>
 
             <nav id="menu-abierto" class="menuLateral-2">
-                <a href="#" class="boton-cerrar"
+                <a href="#0" class="boton-cerrar"
                     ><i class="fa-solid fa-xmark"></i></a
                 >
-
                 <ul>
                     <li><a href="/#inicio">Inicio</a></li>
                     <li><a href="/#about">Nosotros</a></li>
@@ -109,7 +108,58 @@ import "../styles/global.css";
     </nav>
 </div>
 
+<div id="nav-placeholder"></div>
+
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    .menu li {
+        display: inline-block;
+        margin: 0 15px;
+    }
+    .menu a {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        position: relative;
+        padding: 4px 0;
+    }
+    .menu a::before {
+        content: "";
+        width: 100%;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: #fff;
+        transition: 0.5s transform ease;
+        transform: scale3d(0, 1, 1);
+        transform-origin: 0 50%;
+    }
+    .menu a:hover::before {
+        transform: scale3d(1, 1, 1);
+    }
+    .menu-1 a::before {
+        background: #e01f34;
+    }
+    .menu-1 a:hover::before {
+    }
+</style>
+
+<style>
+    .fa-brands {
+        color: white;
+    }
     /* -------------------------- */
     /* TOPBAR */
     /* -------------------------- */
@@ -138,10 +188,7 @@ import "../styles/global.css";
         margin-left: 12px;
         cursor: pointer;
         transition: 0.3s;
-    }
-
-    .social i:hover {
-        color: #e01f34;
+        font-size: 18px;
     }
 
     /* -------------------------- */
@@ -198,16 +245,17 @@ import "../styles/global.css";
     @media (max-width: 991px) {
         .navbar {
             padding: 0 !important;
-            box-shadow: -2px 9px 10px rgba(0, 0, 0, 0.1);
         }
         .navbar-brand img {
             width: 155px;
         }
-        .container-nav {
+        #main-nav {
             position: fixed;
+            box-shadow: -2px 9px 10px rgba(0, 0, 0, 0.1);
             z-index: 99;
             background: #f4f6f9;
             max-width: 991px;
+            padding: 5px !important;
         }
         .topbar-wrapper {
             display: none;
@@ -294,3 +342,85 @@ import "../styles/global.css";
         z-index: -1;
     }
 </style>
+
+<style>
+    /* ESTADO INICIAL (Relative) */
+    #main-nav {
+        position: relative; /* Inicia como relative, ocupando espacio */
+        width: 100%;
+        color: white;
+        padding: 10px 20px;
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        transition: box-shadow 0.3s ease-in-out;
+        /* Otros estilos de tu nav */
+    }
+
+    /* ESTADO PEGAJOSO (Fixed) - Se activa con JavaScript */
+    .sticky {
+        height: 90px;
+        position: fixed !important; /* Se fija en la ventana */
+        top: 0; /* Siempre en la parte superior */
+        left: 0; /* Alineado a la izquierda */
+        /* Debe tener el mismo ancho para no colapsar */
+        width: 100%;
+        /* Opcional: añade una sombra para que destaque */
+        background: white;
+    }
+    #nav-placeholder {
+        /* 💡 MEJORA 2: Transición para la 'height' */
+        /* Esto suaviza la altura que aparece/desaparece, eliminando el "salto" */
+        transition: height 0.3s ease-in-out;
+        height: 0; /* Inicia en 0 (establecido por JS al inicio) */
+
+        background: red;
+    }
+</style>
+
+<script>
+    // 1. Seleccionar la barra de navegación y el placeholder
+    const navBar = document.getElementById("main-nav") as HTMLElement;
+    const placeholder = document.getElementById(
+        "nav-placeholder",
+    ) as HTMLElement;
+
+    // 2. Obtener la posición inicial del nav y su altura
+    const stickyPoint = navBar.offsetTop;
+    const navHeight = navBar.offsetHeight;
+
+    // 3. Define la media query para pantallas mayores o iguales a 992px
+    // 992px es el punto de quiebre (breakpoint) común para 'lg' en Bootstrap.
+    const desktopQuery = window.matchMedia("(min-width: 992px)");
+
+    function handleScroll() {
+        // Si la pantalla es menor a 992px, salimos de la función inmediatamente
+        if (!desktopQuery.matches) {
+            // Aseguramos que la barra vuelva a su estado normal si se redimensiona
+            navBar.classList.remove("sticky");
+            placeholder.style.height = "0";
+            return;
+        }
+
+        // --- Lógica del Sticky Header (SOLO si la pantalla es grande) ---
+        if (window.scrollY >= stickyPoint) {
+            // A. Fija la barra de navegación
+            navBar.classList.add("sticky");
+            // B. Dale al placeholder la altura del nav
+            placeholder.style.height = navHeight + "px";
+        } else {
+            // C. Quita la clase sticky
+            navBar.classList.remove("sticky");
+            // D. Vuelve la altura del placeholder a 0
+            placeholder.style.height = "0";
+        }
+    }
+
+    // 4. Conectar la función al evento de scroll
+    window.addEventListener("scroll", handleScroll);
+
+    // 5. Opcional: Ejecutar la función una vez al cargar y al cambiar el tamaño de la ventana
+    // Esto es útil si el usuario redimensiona la ventana
+    window.addEventListener("resize", handleScroll);
+    handleScroll(); // Ejecutar al inicio para establecer el estado correcto
+</script>
