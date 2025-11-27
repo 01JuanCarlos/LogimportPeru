@@ -21,6 +21,14 @@ import Footer from "../components/footer.astro";
         gap: 8px;
         transition: 0.3s;
     }
+    .container-form {
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
     @media (max-width: 991px) {
         .container-form {
             margin-top: 92px !important;
@@ -35,8 +43,9 @@ import Footer from "../components/footer.astro";
             En el siguiente formulario podrá especificar las características del
             big bag que es de su interés
         </p>
-
-        <form action="#" method="post">
+        <br />
+        <br />
+        <form action="#" method="post" class="col-lg-10">
             <div class="row g-3">
                 <div class="col-md-6">
                     <label for="empresa" class="form-label">Empresa:</label>
@@ -139,7 +148,7 @@ import Footer from "../components/footer.astro";
             <div class="row">
                 <div class="col-md-6 design-option">
                     <img
-                        src="./product-1.jpg"
+                        src="product-1.jpg"
                         alt="Big Bag Cielo Abierto - Fondo Plano"
                         style="max-width: 9rem;padding: 10px;"
                     />
@@ -160,7 +169,7 @@ import Footer from "../components/footer.astro";
 
                 <div class="col-md-6 design-option">
                     <img
-                        src="./product-2.jpg"
+                        src="../product-2.jpg"
                         alt="Big Bag Cielo Abierto - Buzón de Descarga"
                         style="max-width: 9rem; padding: 10px;"
                     />
