@@ -37,166 +37,38 @@ import Footer from "../components/footer.astro";
 </style>
 <Layout>
     <Navbar />
-    <div class="container container-form">
-        <h1 class="text-center mb-2">Cotización Big Bag</h1>
-        <p class="text-center text-header mb-4">
-            En el siguiente formulario podrá especificar las características del
-            big bag que es de su interés
-        </p>
-        <br />
-        <br />
-        <form action="#" method="post" class="col-lg-10">
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <label for="empresa" class="form-label">Empresa:</label>
-                    <input
-                        type="text"
-                        class="form-control"
-                        id="empresa"
-                        name="empresa"
-                    />
-                </div>
-                <div class="col-md-6">
-                    <label for="rucdni" class="form-label">RUC/DNI:</label>
-                    <input
-                        type="text"
-                        class="form-control"
-                        id="rucdni"
-                        name="rucdni"
-                    />
-                </div>
-                <div class="col-md-6">
-                    <label for="ciudad" class="form-label">Ciudad:</label>
-                    <input
-                        type="text"
-                        class="form-control"
-                        id="ciudad"
-                        name="ciudad"
-                    />
-                </div>
-                <div class="col-md-6">
-                    <label for="contacto" class="form-label"
-                        >Persona de contacto:</label
-                    >
-                    <input
-                        type="text"
-                        class="form-control"
-                        id="contacto"
-                        name="contacto"
-                    />
-                </div>
-                <div class="col-md-6">
-                    <label for="correo" class="form-label">Correo:</label>
-                    <input
-                        type="email"
-                        class="form-control"
-                        id="correo"
-                        name="correo"
-                    />
-                </div>
-                <div class="col-md-6">
-                    <label for="telefono" class="form-label">Teléfono:</label>
-                    <input
-                        type="tel"
-                        class="form-control"
-                        id="telefono"
-                        name="telefono"
-                    />
-                </div>
-            </div>
+    <form method="POST" action="/api/brevo-submit" class="contact-form">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
 
-            <div class="mb-4 mt-3">
-                <label for="comentario" class="form-label">Comentario:</label>
-                <textarea
-                    class="form-control"
-                    id="comentario"
-                    name="comentario"
-                    rows="3"></textarea>
-            </div>
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required />
 
-            <hr />
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
 
-            <h5 class="mb-3">ESPECIFICACIONES TÉCNICAS DEL BIG BAG</h5>
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <label for="capacidad" class="form-label"
-                        >Capacidad de carga:</label
-                    >
-                    <input
-                        type="text"
-                        class="form-control"
-                        id="capacidad"
-                        name="capacidad"
-                    />
-                </div>
-                <div class="col-md-6">
-                    <label for="material" class="form-label"
-                        >Material a cargar:</label
-                    >
-                    <input
-                        type="text"
-                        class="form-control"
-                        id="material"
-                        name="material"
-                    />
-                </div>
-            </div>
+        <button type="submit">Enviar Mensaje</button>
+    </form>
 
-            <hr class="mt-4" />
+    <style>
+        /* Puedes agregar un estilo básico aquí */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            gap: 10px;
+        }
+        input,
+        textarea,
+        button {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
 
-            <h5 class="mb-3">DISEÑO DEL BIG BAG</h5>
-            <div class="row">
-                <div class="col-md-6 design-option">
-                    <img
-                        src="../product-1.jpg"
-                        alt="Big Bag Cielo Abierto - Fondo Plano"
-                        style="max-width: 9rem;padding: 10px;"
-                    />
-                    <div class="form-check d-flex">
-                        <input
-                            class="form-check-input me-2"
-                            type="radio"
-                            name="diseno"
-                            id="diseno1"
-                            value="Cielo Abierto - Fondo Plano"
-                            checked
-                        />
-                        <label class="form-check-label" for="diseno1">
-                            Cielo Abierto - Fondo Plano
-                        </label>
-                    </div>
-                </div>
-
-                <div class="col-md-6 design-option">
-                    <img
-                        src="../product-2.jpg"
-                        alt="Big Bag Cielo Abierto - Buzón de Descarga"
-                        style="max-width: 9rem; padding: 10px;"
-                    />
-                    <div class="form-check d-flex">
-                        <input
-                            class="form-check-input me-2"
-                            type="radio"
-                            name="diseno"
-                            id="diseno2"
-                            value="Cielo Abierto - Buzón de Descarga"
-                        />
-                        <label class="form-check-label" for="diseno2">
-                            Cielo Abierto - Buzón de Descarga
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <br />
-            <br />
-            <div class="mt-4 d-flex justify-content-center">
-                <button type="submit" class="btn-send btn-enviar">
-                    Enviar<i class="fa-solid fa-angle-right fa-lg"></i>
-                </button>
-            </div>
-        </form>
-    </div>
-    <br />
-    <br />
-    <Footer />
 </Layout>
+<br />
+<br />
+
+
+<Footer />

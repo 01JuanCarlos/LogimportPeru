@@ -10,6 +10,7 @@
 	</head>
 	<body>
 		<slot />
+		<button id="scrollTopBtn">↑</button>
 		<!-- Swiper JS -->
 		<script>
 			import "swiper/css";
@@ -22,6 +23,35 @@
 		<script>
 			import "bootstrap/dist/css/bootstrap.min.css";
 			import "bootstrap/dist/js/bootstrap.bundle.min.js";
+		</script>
+		<script>
+			// Mostrar el botón cuando se desplaza hacia abajo
+			window.onscroll = function () {
+				var nav2 = document.getElementById("nav2");
+				var scrollBtn = document.getElementById("scrollTopBtn");
+
+				if (
+					document.body.scrollTop > 200 ||
+					document.documentElement.scrollTop > 200
+				) {
+					scrollBtn!.style.display = "block"; // Mostrar botón
+					nav2!.classList.add("show"); // Agregar la clase que lo hace visible
+				} else {
+					scrollBtn!.style.display = "none"; // Ocultar botón
+					nav2!.classList.remove("show"); // Quitar la clase para ocultarlo con transición
+				}
+			};
+
+			function scrollToTop() {
+				console.log("boton arriba");
+				window.scrollTo({
+					top: 0,
+					behavior: "smooth",
+				});
+			}
+
+			// Asignar el listener al botón *después* de que se haya definido la función.
+			document.getElementById("scrollTopBtn")!.addEventListener("click", scrollToTop);
 		</script>
 	</body>
 </html>
