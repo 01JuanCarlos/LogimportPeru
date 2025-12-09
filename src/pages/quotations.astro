@@ -37,38 +37,292 @@ import Footer from "../components/footer.astro";
 </style>
 <Layout>
     <Navbar />
-    <form method="POST" action="/api/brevo-submit" class="contact-form">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required />
+    <div class="container container-form">
+        <h1 class="text-center mb-2">Cotización Big Bag</h1>
+        <p class="text-center text-header mb-4">
+            En el siguiente formulario podrá especificar las características del
+            big bag que es de su interés
+        </p>
+        <br />
+        <br />
 
-        <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" name="email" required />
+        <form
+            id="cotizacionForm"
+            method="POST"
+            action="/api/brevo-submit"
+            class="contact-form"
+        >
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="empresa" class="form-label">Empresa:</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="empresa"
+                        name="empresa"
+                        required
+                    />
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label"
+                        >Correo Electrónico:</label
+                    >
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        required
+                    />
+                </div>
+                <div class="col-md-6">
+                    <label for="rucdni_value" class="form-label">RUC/DNI:</label
+                    >
 
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" required></textarea>
+                    <div class="input-group">
+                        <select
+                            class="form-select"
+                            id="rucdni_type"
+                            name="rucdni_type"
+                            style="max-width: 110px;"
+                        >
+                            <option value="RUC" selected>RUC</option>
+                            <option value="DNI">DNI</option>
+                        </select>
 
-        <button type="submit">Enviar Mensaje</button>
-    </form>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="rucdni_value"
+                            name="rucdni_value"
+                            placeholder="Ingrese el número"
+                            required
+                        />
+                    </div>
 
-    <style>
-        /* Puedes agregar un estilo básico aquí */
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            max-width: 400px;
-            gap: 10px;
-        }
-        input,
-        textarea,
-        button {
-            padding: 10px;
-            font-size: 16px;
-        }
-    </style>
+                    <!-- ✔ Error debajo del input -->
+                    <p id="rucdni_error" class="text-danger small mt-1"></p>
+                </div>
 
+                <div class="col-md-6">
+                    <label for="ciudad" class="form-label">Ciudad:</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="ciudad"
+                        name="ciudad"
+                    />
+                </div>
+                <div class="col-md-6">
+                    <label for="contacto" class="form-label"
+                        >Persona de contacto:</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="contacto"
+                        name="contacto"
+                    />
+                </div>
+                <div class="col-md-6">
+                    <label for="telefono" class="form-label">Teléfono:</label>
+                    <input
+                        type="tel"
+                        class="form-control"
+                        id="telefono"
+                        name="telefono"
+                    />
+                </div>
+            </div>
+
+            <div class="mb-4 mt-3">
+                <label for="mensaje">Mensaje:</label>
+                <textarea
+                    id="mensaje"
+                    class="form-control"
+                    name="mensaje"
+                    ></textarea>
+            </div>
+            <hr />
+            <h5 class="mb-3">ESPECIFICACIONES TÉCNICAS DEL BIG BAG</h5>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="capacidad" class="form-label"
+                        >Capacidad de carga:</label
+                    >
+                    <div class="input-group">
+                        <input
+                            type="number"
+                            class="form-control"
+                            id="capacidad"
+                            name="capacidad"
+                            step="1"
+                            required
+                        />
+                        <span class="input-group-text">Kg</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="material" class="form-label"
+                        >Material a cargar:</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="material"
+                        name="material"
+                    />
+                </div>
+            </div>
+
+            <hr class="mt-4" />
+
+            <h5 class="mb-3">DISEÑO DEL BIG BAG</h5>
+            <div class="row">
+                <div class="col-md-3 design-option">
+                    <img
+                        src="../product-1.jpg"
+                        alt="Big Bag Cielo Abierto - Fondo Plano"
+                        style="max-width: 9rem;padding: 10px;"
+                    />
+                    <div class="form-check d-flex">
+                        <input
+                            class="form-check-input me-2"
+                            type="radio"
+                            name="diseno"
+                            id="diseno1"
+                            value="Cielo Abierto - Fondo Plano"
+                            checked
+                        />
+                        <label class="form-check-label" for="diseno1">
+                            Cielo Abierto - Fondo Plano
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-md-3 design-option">
+                    <img
+                        src="../product-2.jpg"
+                        alt="Big Bag Cielo Abierto - Buzón de Descarga"
+                        style="max-width: 9rem; padding: 10px;"
+                    />
+                    <div class="form-check d-flex">
+                        <input
+                            class="form-check-input me-2"
+                            type="radio"
+                            name="diseno"
+                            id="diseno2"
+                            value="Cielo Abierto - Buzón de Descarga"
+                        />
+                        <label class="form-check-label" for="diseno2">
+                            Cielo Abierto - Buzón de Descarga
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="mt-4 d-flex justify-content-start">
+                <button
+                    type="submit"
+                    class="btn-send btn-enviar"
+                    id="btnSubmit"
+                    
+                >
+                    Enviar<i class="fa-solid fa-angle-right fa-lg"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Obtenemos los elementos y usamos la aserción de tipo (as ...)
+            // ¡PERO el tipo base sigue incluyendo 'null'!
+            const selectElement = document.getElementById(
+                "rucdni_type",
+            ) as HTMLSelectElement | null;
+            const inputElement = document.getElementById(
+                "rucdni_value",
+            ) as HTMLInputElement | null;
+            const form = document.getElementById(
+                "cotizacionForm",
+            ) as HTMLFormElement | null;
+            const errorElement = document.getElementById(
+                "rucdni_error",
+            ) as HTMLSpanElement | null;
+
+            // 🛑 SOLUCIÓN: Verificamos que todos los elementos críticos existan
+            if (!selectElement || !inputElement || !form || !errorElement) {
+                console.error(
+                    "No se pudieron encontrar todos los elementos del formulario (RUC/DNI) en el DOM.",
+                );
+                // Si falta alguno, detenemos la ejecución del script.
+                return;
+            }
+
+            // --- A PARTIR DE AQUÍ, TypeScript SABE que los elementos existen y NO son null ---
+
+            const telefonoInput =
+                document.querySelector<HTMLInputElement>("#telefono");
+
+            if (telefonoInput) {
+                telefonoInput.addEventListener("input", () => {
+                    telefonoInput.value = telefonoInput.value
+                        .replace(/\D/g, "")
+                        .slice(0, 9);
+                });
+            }
+            // Función de validación principal
+            function validateRucDni() {
+                const type = selectElement!.value; // Ya no hay error de 'possibly null'
+                const value = inputElement!.value.trim();
+
+                // Expresiones regulares para la validación de formato en Perú
+                const RUC_REGEX = /^\d{11}$/;
+                const DNI_REGEX = /^\d{8}$/;
+
+                errorElement!.textContent = "";
+                inputElement!.setCustomValidity("");
+
+                if (!value) {
+                    return true;
+                }
+
+                if (type === "RUC") {
+                    if (!RUC_REGEX.test(value)) {
+                        errorElement!.textContent =
+                            "El RUC debe tener exactamente 11 dígitos.";
+                        inputElement!.setCustomValidity("RUC Inválido");
+                        return false;
+                    }
+                } else if (type === "DNI") {
+                    if (!DNI_REGEX.test(value)) {
+                        errorElement!.textContent =
+                            "El DNI debe tener exactamente 8 dígitos.";
+                        inputElement!.setCustomValidity("DNI Inválido");
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+
+            // 3. Añadir Event Listeners (usamos los elementos verificados)
+
+            selectElement.addEventListener("change", validateRucDni);
+            inputElement.addEventListener("input", validateRucDni);
+
+            // 4. Prevenir el envío si la validación falla
+            form.addEventListener("submit", function (event) {
+                if (!validateRucDni()) {
+                    event.preventDefault();
+                    inputElement.focus();
+                }
+            });
+        });
+    </script>
 </Layout>
 <br />
 <br />
-
 
 <Footer />
