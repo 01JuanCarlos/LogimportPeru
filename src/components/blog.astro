@@ -1,3 +1,8 @@
+---
+// No se necesita JS en el frontmatter, solo lo cargaremos en el script de cliente.
+// Asegúrate de que el CSS de Bootstrap esté cargado globalmente en tu BaseLayout.astro.
+---
+
 <section
     class="container"
     style="display: flex;flex-direction: column;justify-content: center;align-items: center;"
@@ -9,6 +14,7 @@
             Big Bags una solución eficiente para el transporte y almacenamiento
         </h2>
         <br />
+        
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
                 <button
@@ -36,6 +42,7 @@
                 </div>
             </div>
         </div>
+
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTwo">
                 <button
@@ -62,6 +69,7 @@
                 </div>
             </div>
         </div>
+
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingThree">
                 <button
@@ -92,3 +100,29 @@
     <br />
     <br />
 </section>
+
+<script>
+    // Importa el módulo específico que necesitamos (Accordion)
+    // Nota: Esto asume que tienes Bootstrap instalado como paquete de Node
+    import { Collapse } from 'bootstrap';
+
+    // Función para inicializar el acordeón
+    const initializeAccordion = () => {
+        const accordionElement = document.getElementById('accordionExample');
+        if (accordionElement) {
+            // Bootstrap usa 'Collapse' para el acordeón.
+            // Aunque los data-attributes deberían funcionar solos,
+            // inicializarlo programáticamente asegura la funcionalidad.
+            const accordionButtons = accordionElement.querySelectorAll('.accordion-button');
+            accordionButtons.forEach(button => {
+                // No necesitamos inicializarlo con JS si usamos data-bs-toggle, 
+                // pero si tienes lógica más compleja, este es el lugar.
+                // Para el acordeón simple, el import de 'Collapse' es suficiente para registrar los listeners.
+            });
+        }
+    };
+
+    // Esperar a que el DOM esté completamente cargado antes de inicializar
+    document.addEventListener('DOMContentLoaded', initializeAccordion);
+
+</script>

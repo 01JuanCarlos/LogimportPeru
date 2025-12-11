@@ -1,62 +1,104 @@
+---
+export interface Props {
+	title: string;
+	description: string;
+	canonical: string;
+}
+
+const { title, description, canonical } = Astro.props;
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "bootstrap/dist/css/bootstrap.min.css";
+import ScrollToTopButton from "../components/ScrollToTopButton.astro";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 
-		<title>Logimport Perú SAC</title>
+		<title>
+			Logimport Perú SAC | Soluciones Seguras para Minería y Logística
+		</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="/logo.png" />
+		<meta property="og:url" content={canonical} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<script
+			src="https://kit.fontawesome.com/91bb861e30.js"
+			crossorigin="anonymous"
+			async></script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "ManufacturingCompany",
+
+				/* ATRIBUTOS ESENCIALES DE LA EMPRESA */
+
+				"name": "Logimport Perú SAC",
+				"url": "https://logimportperusac.com/",
+				"logo": "/favicon.svg",
+
+				/* DESCRIPCIÓN Y SLOGAN BASADOS EN TU MISIÓN */
+
+				"description": "Empresa peruana líder en el suministro de Big Bags (FIBC) para la industria minera, agrícola y logística, garantizando transporte y almacenamiento eficiente de materiales a granel.",
+				"slogan": "Soluciones seguras, eficientes y sostenibles para la industria del Perú.",
+
+				/* ENFOQUE GEOGRÁFICO (Clave para SEO Local) */
+
+				"areaServed": {
+					"@type": "Country",
+					"name": "Perú"
+				},
+
+				/* INFORMACIÓN DE CONTACTO */
+
+				"contactPoint": {
+					"@type": "ContactPoint",
+					"telephone": "[Tu número de teléfono de contacto en Perú]",
+					"contactType": "Ventas y Soporte"
+				},
+
+				/* DETALLE DEL PRODUCTO/SERVICIO (El corazón de tu negocio) */
+
+				"makesOffer": {
+					"@type": "Offer",
+					"itemOffered": {
+						"@type": "Product",
+						"name": "Big Bags de Alta Calidad para Minería, Agricultura y Logística",
+						"category": "Soluciones de Embalaje Industrial",
+						"description": "Big Bags con certificaciones de seguridad, diseñados para el transporte y almacenamiento sostenible de todo tipo de materiales a granel.",
+						// Propiedades del producto que refuerzan el SEO
+						"keywords": "Big Bags, FIBC, Sacos a Granel, Minería, Agricultura, Logística, Perú, Sostenibles"
+					}
+				},
+
+				/* REDES SOCIALES */
+
+				"sameAs": [
+					"https://www.facebook.com/?locale=es_LA",
+					"https://es.linkedin.com/"
+					// Si tienes un canal de YouTube con videos de productos, añádelo
+				]
+			}
+		</script>
 	</head>
 	<body>
 		<slot />
-		<button id="scrollTopBtn">↑</button>
-		<!-- Swiper JS -->
-		<script>
-			import "swiper/css";
-			import "swiper/css/navigation";
-			import "swiper/css/pagination";
-		</script>
-		<script
-			src="https://kit.fontawesome.com/91bb861e30.js"
-			crossorigin="anonymous"></script>
-		<script>
-			import "bootstrap/dist/css/bootstrap.min.css";
-			import "bootstrap/dist/js/bootstrap.bundle.min.js";
-		</script>
-		<script>
-			// Mostrar el botón cuando se desplaza hacia abajo
-			window.onscroll = function () {
-				var nav2 = document.getElementById("nav2");
-				var scrollBtn = document.getElementById("scrollTopBtn");
-
-				if (
-					document.body.scrollTop > 200 ||
-					document.documentElement.scrollTop > 200
-				) {
-					scrollBtn!.style.display = "block"; // Mostrar botón
-					nav2!.classList.add("show"); // Agregar la clase que lo hace visible
-				} else {
-					scrollBtn!.style.display = "none"; // Ocultar botón
-					nav2!.classList.remove("show"); // Quitar la clase para ocultarlo con transición
-				}
-			};
-
-			function scrollToTop() {
-				console.log("boton arriba");
-				window.scrollTo({
-					top: 0,
-					behavior: "smooth",
-				});
-			}
-
-			// Asignar el listener al botón *después* de que se haya definido la función.
-			document.getElementById("scrollTopBtn")!.addEventListener("click", scrollToTop);
-		</script>
+		<ScrollToTopButton client:idle />
 	</body>
 </html>
 
-<style>
+<style is:global>
+	/* El selector is:global garantiza que el estilo se aplique a todo el DOM */
 	html,
 	body {
 		margin: 0;

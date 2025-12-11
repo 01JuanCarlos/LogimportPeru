@@ -3,6 +3,11 @@ import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/navbar.astro";
 import Footer from "../components/footer.astro";
+
+const pageTitle = "Logimport Perú SAC | Líderes en Logística y Aduanas";
+const pageDescription =
+    "Servicios de importación, aduanas y cadena de suministro en Perú. Optimiza tus costos y tiempos con Logimport.";
+const pageCanonical = "https://tudominio.com/";
 ---
 
 <style>
@@ -35,7 +40,11 @@ import Footer from "../components/footer.astro";
         }
     }
 </style>
-<Layout>
+<Layout
+    title={pageTitle}
+    description={pageDescription}
+    canonical={pageCanonical}
+>
     <Navbar />
     <div class="container container-form">
         <h1 class="text-center mb-2">Cotización Big Bag</h1>
@@ -137,11 +146,8 @@ import Footer from "../components/footer.astro";
 
             <div class="mb-4 mt-3">
                 <label for="mensaje">Mensaje:</label>
-                <textarea
-                    id="mensaje"
-                    class="form-control"
-                    name="mensaje"
-                    ></textarea>
+                <textarea id="mensaje" class="form-control" name="mensaje"
+                ></textarea>
             </div>
             <hr />
             <h5 class="mb-3">ESPECIFICACIONES TÉCNICAS DEL BIG BAG</h5>
@@ -227,7 +233,6 @@ import Footer from "../components/footer.astro";
                     type="submit"
                     class="btn-send btn-enviar"
                     id="btnSubmit"
-                    
                 >
                     Enviar<i class="fa-solid fa-angle-right fa-lg"></i>
                 </button>

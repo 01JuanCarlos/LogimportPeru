@@ -8,13 +8,19 @@ import Gallery from "../components/gallery.astro";
 import Products from "../components/products.astro";
 import Video from "../components/video.astro";
 import Blog from "../components/blog.astro";
-import Footer from "../components/footer.astro"
+import Footer from "../components/footer.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const pageTitle = 'Big Bags para Minería y Logística en Perú';
+const pageDescription = 'Big Bags de alta calidad, seguros y sostenibles para Minería, Agricultura y Logística en Perú. Compromiso con la puntualidad y atención personalizada.';
+const pageCanonical = 'https://logimportperusac.com/'; 
+
 ---
 
-<Layout>
+<Layout
+	title={pageTitle}
+	description={pageDescription}
+	canonical={pageCanonical}
+>
 	<Navbar />
 	<Banner />
 	<Solutions />
@@ -22,6 +28,6 @@ import Footer from "../components/footer.astro"
 	<Gallery />
 	<Products />
 	<Video />
-	<Blog />
-	<Footer/>
+	<Blog client:load/>
+	<Footer />
 </Layout>

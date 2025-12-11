@@ -1,0 +1,82 @@
+
+<button id="scrollTopBtn" title="Ir arriba"><i class="fa-solid fa-angle-up"></i></button>
+
+<script>
+    // Usamos un script de módulo para encapsular el código
+    
+    // Obtenemos los elementos
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    const nav2 = document.getElementById("nav2"); // Asumiendo que 'nav2' existe en el DOM
+
+    if (scrollBtn) {
+        // 1. Lógica para mostrar/ocultar el botón
+        const toggleVisibility = () => {
+            const scrolled = document.documentElement.scrollTop || document.body.scrollTop;
+            const show = scrolled > 200;
+
+            scrollBtn.style.display = show ? "block" : "none";
+            
+            // Lógica para la navegación flotante
+            if (nav2) {
+                if (show) {
+                    nav2.classList.add("show");
+                } else {
+                    nav2.classList.remove("show");
+                }
+            }
+        };
+
+        // 2. Lógica para subir
+        const scrollToTop = () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        };
+
+        // Event Listeners
+        window.addEventListener("scroll", toggleVisibility);
+        scrollBtn.addEventListener("click", scrollToTop);
+
+        // Llamada inicial para establecer el estado
+        toggleVisibility();
+    }
+</script>
+
+<style>
+ 
+#scrollTopBtn {
+  position: fixed;
+  /* Fijo en la pantalla */
+  bottom: 20px;
+  /* Separación desde abajo */
+  right: 20px;
+  /* Separación desde la derecha */
+  display: none;
+  /* Oculto por defecto */
+  background-color:#e01f34;
+  /* Color de fondo */
+  color: white;
+  /* Color de texto */
+  border: none;
+  /* Sin borde */
+  padding: 10px;
+  /* Relleno del botón */
+  font-size: 18px;
+  /* Tamaño del texto */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  cursor: pointer;
+  /* Cambia el cursor a un puntero */
+  z-index: 100;
+  /* Asegura que el botón esté por encima de otros elementos */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+#scrollTopBtn:hover {
+  background-color: #555;
+  /* Color al pasar el ratón por encima */
+}
+</style>
