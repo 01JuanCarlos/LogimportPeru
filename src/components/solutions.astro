@@ -3,11 +3,15 @@ import "../styles/all.min.css";
 import "../styles/global.css";
 ---
 
-<div class="w-100 py-5 text-center">
-    <h2 class="" style="color: #052551;">Soluciones para distintos sectores</h2>
+<section
+    class="w-100 py-5 text-center"
+    aria-label="Soluciones para distintos sectores"
+>
+    <h2 style="color: #052551;">Soluciones para distintos sectores</h2>
 
-    <div  data-aos="fade-up"
-  data-aos-duration="800"
+    <div
+        data-aos="fade-up"
+        data-aos-duration="800"
         class="img-fixet d-flex justify-content-center align-items-center flex-wrap mt-4 py-4"
         style="gap: 60px;"
     >
@@ -15,7 +19,7 @@ import "../styles/global.css";
             <img
                 class="solutions-icon"
                 src="./icons-solutions/agricola-icon.svg"
-                alt=""
+                alt="Icono de sector agrícola"
             />
             <p class="mt-2 fw-semibold">AGRÍCOLA</p>
         </div>
@@ -24,7 +28,7 @@ import "../styles/global.css";
             <img
                 class="solutions-icon"
                 src="./icons-solutions/construccion-icon.svg"
-                alt=""
+                alt="Icono de sector construcción"
             />
             <p class="mt-2 fw-semibold">CONSTRUCCIÓN</p>
         </div>
@@ -33,7 +37,7 @@ import "../styles/global.css";
             <img
                 class="solutions-icon"
                 src="./icons-solutions/ecologia-icon.svg"
-                alt=""
+                alt="Icono de sector ecología"
             />
             <p class="mt-2 fw-semibold">ECOLOGÍA</p>
         </div>
@@ -42,7 +46,7 @@ import "../styles/global.css";
             <img
                 class="solutions-icon"
                 src="./icons-solutions/exportacion-icon.svg"
-                alt=""
+                alt="Icono de sector exportación"
             />
             <p class="mt-2 fw-semibold">EXPORTACIÓN</p>
         </div>
@@ -51,7 +55,7 @@ import "../styles/global.css";
             <img
                 class="solutions-icon"
                 src="./icons-solutions/mineria-icon.svg"
-                alt=""
+                alt="Icono de sector minería"
             />
             <p class="mt-2 fw-semibold">MINERÍA</p>
         </div>
@@ -60,22 +64,22 @@ import "../styles/global.css";
             <img
                 class="solutions-icon"
                 src="./icons-solutions/plastico-icon.svg"
-                alt=""
+                alt="Icono de sector plástico"
             />
             <p class="mt-2 fw-semibold">PLÁSTICO</p>
         </div>
     </div>
-</div>
+</section>
 
 <style>
-    p{
+    p {
         color: white;
     }
     .img-fixet {
         background-image:
-            url("/section-background.png"),
+            url("/fondo-seccion-bigbag.png"),
             /* capa transparente encima */
-            url("/section-background-producs.png"); /* fondo parallax */
+            url("/fondo-seccion-productos-bigbag.png"); /* fondo parallax */
 
         background-repeat: no-repeat, no-repeat;
         background-size: cover, cover;

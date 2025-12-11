@@ -5,7 +5,6 @@
 <style>
     .swiper {
         width: 80%;
-        height: 100%;
     }
 
     .swiper-slide {
@@ -15,7 +14,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 3px ;
+        border-radius: 3px;
         overflow: hidden;
     }
 
@@ -32,35 +31,64 @@
 </style>
 
 <!-- Swiper -->
-<div class="container py-5">
+<section class="container py-5" aria-label="Galería de Big Bags y aplicaciones">
+    <h2 class="text-center mb-4" style="color: #052551;">
+        Nuestra galería de productos y aplicaciones
+    </h2>
+
     <div class="swiper mySwiper" data-aos="fade-up">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img src="./slide-1-gallery.png" alt="" />
+                <img
+                    src="./galeria-bigbag-logimport-1.png"
+                    alt="Big Bags utilizados para almacenamiento de materiales a granel"
+                />
             </div>
+
             <div class="swiper-slide">
-                <img src="./slide-2-gallery.png" alt="" />
+                <img
+                    src="./galeria-bigbag-logimport-2.png"
+                    alt="Big Bags en proceso de carga industrial"
+                />
             </div>
+
             <div class="swiper-slide">
-                <img src="./slide-3-gallery.png" alt="" />
+                <img
+                    src="./galeria-bigbag-logimport-3.png"
+                    alt="Big Bags en almacén listos para distribución"
+                />
             </div>
+
             <div class="swiper-slide">
-                <img src="./slide-1-gallery.png" alt="" />
+                <img
+                    src="./galeria-bigbag-logimport-1.png"
+                    alt="Big Bags utilizados para almacenamiento de materiales a granel"
+                />
             </div>
+
             <div class="swiper-slide">
-                <img src="./slide-2-gallery.png" alt="" />
+                <img
+                    src="./galeria-bigbag-logimport-2.png"
+                    alt="Big Bags en proceso de carga industrial"
+                />
             </div>
+
             <div class="swiper-slide">
-                <img src="./slide-3-gallery.png" alt="" />
+                <img
+                    src="./galeria-bigbag-logimport-3.png"
+                    alt="Big Bags en almacén listos para distribución"
+                />
             </div>
         </div>
 
+        <!-- Paginación -->
         <div class="swiper-pagination"></div>
 
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <!-- Botones -->
+        <div class="swiper-button-next" aria-label="Siguiente imagen"></div>
+        <div class="swiper-button-prev" aria-label="Imagen anterior"></div>
     </div>
-</div>
+</section>
 
 <script>
     import Swiper from "swiper";

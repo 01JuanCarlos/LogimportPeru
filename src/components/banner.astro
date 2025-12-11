@@ -25,28 +25,19 @@
   /* SLIDE 1 - fondo + contenido */
   /* -------------------------------------- */
   .slide-1 {
-    background-image: linear-gradient(
-        to right,
-        #0f2f5ae8,
-        rgba(255, 255, 255, 0)
-      ),
-      url("/banner.png");
+    background-image:
+      linear-gradient(to right, #0f2f5ae8, rgba(255, 255, 255, 0)),
+      url("/banner-principal-logimport-peru.jpg");
   }
   .slide-2 {
-    background-image: linear-gradient(
-        to right,
-        #0f2f5ae8,
-        rgba(255, 255, 255, 0)
-      ),
-      url("/banner-slide-2.jpg");
+    background-image:
+      linear-gradient(to right, #0f2f5ae8, rgba(255, 255, 255, 0)),
+      url("/banner-bigbag-logimport-2.jpg");
   }
   .slide-3 {
-    background-image: linear-gradient(
-        to right,
-        #0f2f5ae8,
-        rgba(255, 255, 255, 0)
-      ),
-      url("/banner-slide-3.jpg");
+    background-image:
+      linear-gradient(to right, #0f2f5ae8, rgba(255, 255, 255, 0)),
+      url("/banner-bigbag-logimport-3.jpg");
   }
   .slide {
     width: 100%;
@@ -115,7 +106,7 @@
     color: white;
     background: #333;
   }
- 
+
   @media (max-width: 576px) {
     .swiper-button-next,
     .swiper-button-prev {
@@ -136,78 +127,89 @@
     }
   }
 </style>
-
 <div
   class="swiper heroSwiper container container-slider-custom"
   data-aos="zoom-in"
   id="inicio"
 >
   <div class="swiper-wrapper">
-    <!-- SLIDE 1 -->
+    <!-- SLIDE 1 - Minería -->
     <div class="swiper-slide">
       <div class="slide slide-1 d-flex align-items-center">
         <div class="slide-content col-lg-7 col-md-9 col-sm-11 d-flex">
           <div>
-            <h1 class="slide-title">
-              Soluciones de Empaque para Carga semi Granel
-            </h1>
+            <h2 class="slide-title">
+              Big Bags Reforzados para la Industria Minera
+            </h2>
 
             <p class="slide-desc">
-              Big Bag Perú SAC. Somos una empresa peruana que brinda soluciones
-              de empaque para cargas semi-granel, para su uso en la industria
-              minera, agrícola, plástica, alimenticia, farmacéutica, de la
-              construcción, etc.
+              Big Bag Perú SAC ofrece sacos industriales de alta resistencia,
+              ideales para carga de minerales y operaciones de alto desgaste.
+              Soluciones diseñadas para soportar procesos exigentes.
             </p>
           </div>
 
-          <button class="btn-slide">
+          <a
+            href="/cotizacion"
+            class="btn-slide"
+            aria-label="Solicitar cotización de big bags para minería"
+          >
             Cotizar <i class="fa-solid fa-angle-right fa-lg"></i>
-          </button>
+          </a>
         </div>
       </div>
     </div>
 
+    <!-- SLIDE 2 - Agricultura -->
     <div class="swiper-slide">
       <div class="slide slide-2 d-flex align-items-center">
         <div class="slide-content col-lg-7 col-md-9 col-sm-11 d-flex">
           <div>
-            <h1 class="slide-title">
-              Soluciones de Empaque para Carga semi Granel
-            </h1>
+            <h2 class="slide-title">
+              Soluciones de Empaque para la Agroindustria
+            </h2>
 
             <p class="slide-desc">
-              Big Bag Perú SAC. Somos una empresa peruana que brinda soluciones
-              de empaque para cargas semi-granel, para su uso en la industria
-              minera, agrícola, plástica, alimenticia, farmacéutica, de la
-              construcción, etc.
+              Big Bags con protección UV, perfectos para productos agrícolas,
+              fertilizantes y semillas. Diseñados para brindar seguridad,
+              ventilación y eficiencia en el transporte.
             </p>
           </div>
 
-          <button class="btn-slide">
+          <a
+            href="/cotizacion"
+            class="btn-slide"
+            aria-label="Solicitar cotización de big bags para agricultura"
+          >
             Cotizar <i class="fa-solid fa-angle-right fa-lg"></i>
-          </button>
+          </a>
         </div>
       </div>
     </div>
+
+    <!-- SLIDE 3 - Construcción / Industria general -->
     <div class="swiper-slide">
       <div class="slide slide-3 d-flex align-items-center">
         <div class="slide-content col-lg-7 col-md-9 col-sm-11 d-flex">
           <div>
-            <h1 class="slide-title">
-              Soluciones de Empaque para Carga semi Granel
-            </h1>
+            <h2 class="slide-title">
+              Empaque Industrial para Materiales a Granel
+            </h2>
 
             <p class="slide-desc">
-              Big Bag Perú SAC. Somos una empresa peruana que brinda soluciones
-              de empaque para cargas semi-granel, para su uso en la industria
-              minera, agrícola, plástica, alimenticia, farmacéutica, de la
-              construcción, etc.
+              Soluciones de big bags para sectores como construcción, plástico,
+              alimentos y farmacéutica. Productos duraderos, certificados y
+              adaptados a las necesidades de cada industria.
             </p>
           </div>
 
-          <button class="btn-slide">
+          <a
+            href="/cotizacion"
+            class="btn-slide"
+            aria-label="Solicitar cotización de big bags industriales"
+          >
             Cotizar <i class="fa-solid fa-angle-right fa-lg"></i>
-          </button>
+          </a>
         </div>
       </div>
     </div>
