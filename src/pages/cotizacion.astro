@@ -57,10 +57,19 @@ const pageCanonical = "https://tudominio.com/";
 
         <form
             id="cotizacionForm"
+            name="cotizacion-bigbag"
             method="POST"
-            action="/api/brevo-submit"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
             class="contact-form col-lg-10"
         >
+            <input type="hidden"  style="display: none;" name="form-name" value="cotizacion-bigbag" />
+            <p class="hidden" style="display: none;">
+                <label>
+                    No llenes esto si eres un robot: <input name="bot-field" />
+                </label>
+            </p>
+
             <div class="row g-3">
                 <div class="col-md-6">
                     <label for="empresa" class="form-label">Empresa:</label>
@@ -187,7 +196,7 @@ const pageCanonical = "https://tudominio.com/";
             <div class="row">
                 <div class="col-md-3 design-option">
                     <img
-                        src="../product-1.jpg"
+                        src="../big-bag-cielo-abierto-fondo-plano.jpg"
                         alt="Big Bag Cielo Abierto - Fondo Plano"
                         style="max-width: 9rem;padding: 10px;"
                     />
@@ -208,7 +217,7 @@ const pageCanonical = "https://tudominio.com/";
 
                 <div class="col-md-3 design-option">
                     <img
-                        src="../product-2.jpg"
+                        src="../big-bag-cielo-abierto-buzon-descarga.jpg"
                         alt="Big Bag Cielo Abierto - Buzón de Descarga"
                         style="max-width: 9rem; padding: 10px;"
                     />
