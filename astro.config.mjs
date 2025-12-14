@@ -14,11 +14,11 @@ export default defineConfig({
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-    output: 'static', 
-
-
+    output: 'static',
     devToolbar: {
         enabled: false
     },
     customCss: ['./src/styles/all.min.css'],
+    site: "https://logimportperusac.com",
+    integrations: [sitemap()]
 });
