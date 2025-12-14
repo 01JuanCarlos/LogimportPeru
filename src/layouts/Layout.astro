@@ -34,59 +34,45 @@ import ScrollToTopButton from "../components/ScrollToTopButton.astro";
 		<meta property="og:image" content="/logo-logimport-peru.png" />
 		<meta property="og:url" content={canonical} />
 		<meta name="twitter:card" content="summary_large_image" />
-			
+
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
-				"@type": "ManufacturingCompany",
-
-				/* ATRIBUTOS ESENCIALES DE LA EMPRESA */
-
+				"@type": "Organization",
 				"name": "Logimport Perú SAC",
 				"url": "https://logimportperusac.com/",
-				"logo": "/favicon-logimport.svg",
-
-				/* DESCRIPCIÓN Y SLOGAN BASADOS EN TU MISIÓN */
-
-				"description": "Empresa peruana líder en el suministro de Big Bags (FIBC) para la industria minera, agrícola y logística, garantizando transporte y almacenamiento eficiente de materiales a granel.",
-				"slogan": "Soluciones seguras, eficientes y sostenibles para la industria del Perú.",
-
-				/* ENFOQUE GEOGRÁFICO (Clave para SEO Local) */
-
+				"logo": "https://logimportperusac.com/favicon-logimport.svg",
+				"description": "Empresa peruana especializada en la importación y comercialización de Big Bags (FIBC) para minería, agricultura y logística industrial.",
 				"areaServed": {
 					"@type": "Country",
-					"name": "Perú"
+					"name": "PE"
 				},
-
-				/* INFORMACIÓN DE CONTACTO */
-
 				"contactPoint": {
 					"@type": "ContactPoint",
-					"telephone": "[Tu número de teléfono de contacto en Perú]",
-					"contactType": "Ventas y Soporte"
+					"telephone": "+51 946 893 679",
+					"contactType": "Ventas",
+					"areaServed": "PE",
+					"availableLanguage": "Spanish"
 				},
-
-				/* DETALLE DEL PRODUCTO/SERVICIO (El corazón de tu negocio) */
-
-				"makesOffer": {
-					"@type": "Offer",
-					"itemOffered": {
-						"@type": "Product",
-						"name": "Big Bags de Alta Calidad para Minería, Agricultura y Logística",
-						"category": "Soluciones de Embalaje Industrial",
-						"description": "Big Bags con certificaciones de seguridad, diseñados para el transporte y almacenamiento sostenible de todo tipo de materiales a granel.",
-						// Propiedades del producto que refuerzan el SEO
-						"keywords": "Big Bags, FIBC, Sacos a Granel, Minería, Agricultura, Logística, Perú, Sostenibles"
-					}
-				},
-
-				/* REDES SOCIALES */
-
 				"sameAs": [
-					"https://www.facebook.com/?locale=es_LA",
-					"https://es.linkedin.com/"
-					// Si tienes un canal de YouTube con videos de productos, añádelo
-				]
+					"https://www.facebook.com/tupagina",
+					"https://www.linkedin.com/company/tupagina"
+				],
+				"hasOfferCatalog": {
+					"@type": "OfferCatalog",
+					"name": "Productos Big Bag",
+					"itemListElement": [
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Product",
+								"name": "Big Bags Industriales (FIBC)",
+								"category": "Embalaje Industrial",
+								"description": "Big Bags certificados para transporte y almacenamiento de materiales a granel en minería, agricultura y logística."
+							}
+						}
+					]
+				}
 			}
 		</script>
 	</head>
